@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+my $now = gmtime;
+print "$now\n";
+
+my $timestamp = 1180630098;
+my $date = localtime $timestamp;
+print "$date\n";
+
+my($sec, $min, $hour, $day, $mon, $year, $wday, $yday, $isdst) = localtime $timestamp;
+print "$sec\n";
+print "$min\n";
+print "$hour\n";
+print "$day\n";
+print "$mon\n";
+print "$year\n";
+print "$wday\n";
+print "$yday\n";
+print "$isdst\n";

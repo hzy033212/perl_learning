@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+# Analyze words in the input file or files
+while (<>) {
+	foreach(split) {
+		$total++;
+		next if /\W/; # strange words skip the remainder of the loop
+		$valid++;
+		$count{$_}++; # count each separate word
+	}
+}
+
+print "total things = $total, valid words = $valid\n";
+foreach $word (sort keys %count) {
+	print "$word was seen $count{$word} times.\n";
+}
+

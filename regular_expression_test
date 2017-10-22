@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+$_ = "yabba dabba doo";
+if (/abba/) {
+	print "It matched!\n";
+} else {
+	print "It did not match!\n";
+}
+
+$_ = "a real \\ backslash";
+if (/\\/) {
+	print "It matched!\n";
+} else {
+	print "It did not match!\n";
+}
+
+$_ = "aabb";
+if (/(.)(.)\2/) {
+	print "It matched!\n";
+} else {
+	print "It did not match!\n";
+}
+
+$_ = "yabba dabba doo";
+if (/y((.)(.)\3\2) d\1/) {
+	print "It matched!\n";
+} else {
+	print "It did not match!\n";
+}
+
+use 5.010;
+
+$_ = "aa11bb";
+if (/(.)\g{1}11/) {
+	print "It matched!\n";
+} else {
+	print "It did not match!\n";
+}
+

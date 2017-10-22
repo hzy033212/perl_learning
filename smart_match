@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+my @b = qw(Foo Bar Baz);
+$first = "Moose" ~~ @b;
+print "$first\n";
+
+my @c = qw(Foo Bar Moose Baz);
+$second = "Moose" ~~ @c;
+print "$second\n";
+
+if (4 ~~ '4abc') {
+	print "match number ~~ string\n";
+}
+if ('4abc' ~~ 4) {
+	print "match string ~~ number\n";
+}

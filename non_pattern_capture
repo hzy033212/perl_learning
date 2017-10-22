@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+
+if (/(bronto)?saurus (steak|burger)/) {
+	print "Fred wants a $2\n";
+}
+
+if (/(?:bronto)?saurus (steak|burger)/) {
+	print "Fred wants a $1\n";
+}
+
+use 5.010;
+
+my $names = 'Fred or Barney';
+if ( $names =~ m/(?<name1>\w+) (?:and|or) (?<name2>\w+)/ ) {
+	say "I saw $+{name1} and $+{name2}";
+}
+
+if ("Hello there, neighbor" =~ /\s(\w+),/) {
+	print "That actually matched '$&'.\n";
+}
+
+if ("Hello there, neighbor" =~ /\s(\w+),/) {
+	print "That was ($`)($&)($').\n";
+}
+
+use 5.010;
+
+if ("Hello there, neighbor" =~ /\s(\w+),/p) {
+	print "That actually matched '${^MATCH}'.\n";
+}
+
+if ("Hello there, neighbor" =~ /\s(\w+),/p) {
+	print "That was (${^PREMATCH})(${^MATCH})(${^POSTMATCH}).\n";
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+# $filename = <>;
+# (-e $filename) or (die "Oops! A file called '$filename' already exists.\n");
+
+# warn "Config file is looking pretty old!\n"
+#	if -M $filename > 10;
+
+my @original_files = qw/ abc.txt def.txt ghi.txt /;
+my @big_old_files; # The ones we want to put to backup tapes
+foreach my $filename (@original_files) {
+	push @big_old_files, $filename
+		if -s $filename > 1 and -A $filename > 1;
+}
+print "@big_old_files\n";
+
+use 5.010;
+
+if (-w -r -x "std_error") {
+	print "The file is both readable and writable!\n"
+}

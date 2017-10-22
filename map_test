@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+my @data = ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 );
+my @double_data = map { &double($_) } @data;
+
+sub double {
+	return 2 * $_;
+}
+
+print "@double_data\n";

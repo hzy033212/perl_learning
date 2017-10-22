@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+my $string = "Hello, world!";
+my $stringed = substr($string, 0, 5);
+print "$stringed\n";
+substr($string, -8) =~ s/Hello/Goodbye/g;
+print "$string\n";

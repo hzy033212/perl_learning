@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use 5.010;
+
+$filename = 'strange_file.txt';
+open my $fh, '>', $filename;
+
+given ($@) {
+	when (undef) { say "No error"; }
+	when ('open') { say "Error from open";}
+	when (':io') { say "Non-open, IO error.";}
+	when (':all') { say "All other autodie errors." }
+	default       { say "Not an autodie error at all." }
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use 5.010001;
+
+@names = qw/ fred Fred abFRed fREder abc /;
+
+foreach ( @names ) {
+	say "\nProcessing $_";
+	when ( $_ ~~ 'Fred' ) {print "Name is Fred\n"; continue }
+	when ( $_ ~~ /\AFred/ ) {print "Name starts with Fred\n"; continue}
+	when ( $_ ~~ /fred/i ) {print "Name has fred in it\n"}
+	say "Moving on to default...";
+	default {print "I don't see a Fred\n"}
+}

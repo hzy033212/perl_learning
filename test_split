@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+@fields = split /:/, "abc:def:g:h";
+print "@fields\n";

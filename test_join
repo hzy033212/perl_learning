@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+my $x = join ":", 4, 6, 8, 10, 12;
+print "$x\n";

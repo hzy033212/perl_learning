@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+system 'date';
+system 'ls -l $HOME';

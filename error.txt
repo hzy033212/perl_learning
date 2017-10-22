@@ -1,0 +1,2 @@
+Operator or semicolon missing before *fdh at ./std_error line 3.
+Ambiguous use of * resolved as operator * at ./std_error line 3.

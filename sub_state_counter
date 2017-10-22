@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.010;
+
+sub count {
+	state $counter = 0;
+	$counter++;
+	return $counter;
+}
+
+say count();
+say count();
+say count();

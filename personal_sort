@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+
+sub descrease {
+	if ($a < $b) { 1 } elsif ($a > $b) { -1 } else { 0 };
+}
+
+@original = qw /1 2 3 4 5 6 7 8 9 10/;
+print "Before sort descrease:\n";
+print "@original\n";
+@afterDecrease = sort descrease @original;
+print "After sort desrease:\n";
+print "@afterDecrease\n";
+
+@secondSort = sort { $b <=>  $a } @original;
+print "@secondSort\n";
+
+print "###Sort hash by values:\n";
+
+my %score = ("barney" => 195, "fred" => 205, "dino" => 30);
+sub by_score { $score{$b} <=> $score{$a} };
+my @winners = sort by_score keys %score;
+print "@winners\n";
+
+my %scores = ("barney" => 195, "fred" => 205, "dino" => 30, "bamm-bamm" => 195);
+my @winners2 = sort by_score_and_name keys %scores;
+sub by_score_and_name {
+	$scores{$b} <=> $scores{$a}
+		or
+	$a cmp $b
+}
+print "@winners2\n";
+

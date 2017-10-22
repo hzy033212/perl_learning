@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+my $int_count = 0;
+my $count = 0;
+sub my_int_handler { $int_count++ }
+$SIG{'INT'} = 'my_int_handler';
+while (1) {
+	$count += 1;
+	if ($int_count) {
+		print "[processing interrupted...]\n";
+		last;
+	}
+	sleep 1;
+	print "My count is $count...\n";
+}

@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.010;
+
+sub greet {
+	state $counter = 0;
+	state $friends = "";
+	if ($counter eq 0) {
+		print "Hi $_[0]! You are the first one here!\n"
+	} else {
+		print "Hi $_[0]! I've seen:$friends\n" 
+	}
+	$counter++;
+	$friends .= " ".$_[0];
+}
+
+greet("Fred");
+greet("Barney");
+greet("Wilma");
+greet("Betty");

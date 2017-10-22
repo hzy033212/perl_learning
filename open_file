@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+if ( ! open Hello_World, '<', 'logfile' ) {
+	die "Cannot create logfile: $!";
+}

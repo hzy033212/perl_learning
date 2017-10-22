@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use File::Basename;
+
+my $name = "/usr/local/bin/perl";
+my $basename = basename $name; # gives 'perl'
+print "$basename\n";
+
+use File::Basename qw/ /; # import no function names
+my $betty = &dirname("/usr/local/bin/perl"); # uses your own subroutine &dirname
+			      		     # (not shown)
+print "$dirname\n";
+my $name = "/usr/local/bin/perl";
+my $dirname = File::Basename::dirname $name; # dirname from the module
+print "$dirname\n";

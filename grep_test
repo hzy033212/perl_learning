@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+my @odd_numbers = grep { $_ % 2 } 1..10;
+print "@odd_numbers\n";

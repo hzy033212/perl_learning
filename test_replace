@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+$_ = "He's out bowling with Barney tonight.";
+s/Barney/Fred/;
+print "$_\n";
+
+$_ = "home, sweet home!";
+s/home/cave/g;
+print "$_\n"; 

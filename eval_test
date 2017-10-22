@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+foreach my $person (qw/ abc.txt def.txt miss ghi.txt /) {
+	eval {
+		open my $fh, '<', $person
+			or die "Can't open file '$person': $!";
+		my($total, $count);
+		while (<$fh>) {
+			$total += $_;
+			$count++;
+		}
+		my $average = $total/$count;
+		print "Average for file $person was $average\n";
+	};
+	if ($@) {
+		print "An error occurred ($@), continuing\n";
+	}	
+}

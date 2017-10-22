@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+my @names = qw{ zero one two three four five six seven eight nine };
+my @numbers = ( @names )[ 9, 0, 2, 1, 0 ];
+print "Bedrock @numbers\n";  # says Bedrock nine zero two one zero
+
+%data = ('John', 45, 'Lisa', 30, 'Kumar', 40, 'Paul', 35, 'Eric', 31);
+@myData = @data{ qw/ Eric Lisa Paul/ };
+print "@myData\n";

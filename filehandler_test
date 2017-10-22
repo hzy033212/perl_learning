@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+open my $rocks_fh, '>>', 'abc.txt'
+	or die "Could not fopen rocks.txt: $!";
+foreach my $rock ( qw( slate lava granite ) ) {
+	say $rocks_fh $rock
+}
+print $rocks_fh "limestone\n";
+close $rocks_fh;

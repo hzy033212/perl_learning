@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+# my $successful = unlink "a.txt", "b.txt", "c.txt";
+# print "I deleted $successful file(s) just now\n";
+
+foreach my $file (qw(a.txt b.txt c.txt)) {
+	unlink $file or warn "failed on $file: $!\n";
+}
+
+rename 'rename.txt', 'renamed.txt';
